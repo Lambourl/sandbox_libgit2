@@ -24,7 +24,7 @@ git_repository *repo = NULL;
 git_repository_init(&repo, repo_path, false);
 git_repository_open(&repo, repo_path);
 
-std::vector<std::string> temp_ignore_rules ;
+std::vector<std::string> ignore_rules ;
 std::vector<std::string> temp_ignore_rules = {"/build", "/.git", "/doc", "/node_modules"};
 ignore_rules.insert(ignore_rules.begin(), temp_ignore_rules.begin(), temp_ignore_rules.end());
 
