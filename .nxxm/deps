@@ -1,9 +1,14 @@
 {
   
   
-   "platform:vs-15-2017-win64-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  "platform:gcc-7-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:clang-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:vs-15-2017-win64-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
   , "platform:vs-16-2019-win64-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:linux" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:linux-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:macos" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
+  , "platform:macos-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2" ]
   , "platform:windows" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2", "target::ws2_32" ]
   , "platform:windows-cxx17" : [ "Boost::system", "Boost::filesystem", "Boost::regex", "libgit2::+git2", "target::ws2_32" ]
-
 }
