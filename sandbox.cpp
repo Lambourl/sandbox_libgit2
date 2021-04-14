@@ -17,7 +17,7 @@ int main(int argc, const char *argv[]) {
 fs::path where_i_am = fs::current_path();
 auto abs_proj_dir = fs::canonical(where_i_am);
 
-inglued::init_libgit2 init_lib{};
+init_libgit2 init_lib{};
 const char *repo_path = (abs_proj_dir.string()).c_str();
 git_repository *repo = NULL;
 
