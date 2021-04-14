@@ -16,9 +16,11 @@ int main(int argc, const char *argv[]) {
 
 fs::path where_i_am = fs::current_path();
 auto abs_proj_dir = fs::canonical(where_i_am);
+std::string abs_proj_dir_string = abs_proj_dir.string();
+
 
 init_libgit2 init_lib{};
-const char *repo_path = (abs_proj_dir.string()).c_str();
+const char *repo_path = blqblq.data();
 git_repository *repo = NULL;
 
 git_repository_init(&repo, repo_path, false);
@@ -35,7 +37,10 @@ for (std::string &ignore_rule : ignore_rules) {
       }
 
 for (fs::directory_entry &entry : fs::recursive_directory_iterator{abs_proj_dir}) {
-git_ignore_path_is_ignored(&ignore_file, repo, (((entry.path()).string()).c_str()));
+    std::cout << "file " << entry.path().lexically_relative(abs_proj_dir).generic_string() << std::endl;
+    //std::cout << "file " << entry.path().lexically_relative(abs_proj_dir).string() << std::endl;
+git_ignore_path_is_ignored(&ignore_file, repo, entry.path().lexically_relative(abs_proj_dir).generic_string().c_str() );
+
 if (!ignore_file)
 {
     std::cout<<"file complet "<<(entry.path()).string()<<std::endl;
@@ -45,6 +50,5 @@ else if (ignore_file)
     std::cout<<"griffon "<<(entry.path()).string()<<std::endl;
 }
  }
+ return 0 ;
 }
-
-
